@@ -11,8 +11,8 @@ public:
 	}
 
 	bool isFull() {
-		if( front == 0 && rear = size -1 ) {
-			return true
+		if( front == 0 && rear == size -1 ) {
+			return true;
 		}
 		return false;
 	}
@@ -78,7 +78,7 @@ int main() {
 	Queue q;
 
 	for( int x=1; x<=5; x++ ) {
-		q.queue(x);
+		q.enQueue(x);
 	}
 
 	q.display();
