@@ -1,4 +1,4 @@
-//Hash DS, Hashing
+	//Hash DS, Hashing
 #include<bits/stdc++.h>
 
 struct DataItem {

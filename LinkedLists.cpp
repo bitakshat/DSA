@@ -1,33 +1,24 @@
 #include<bits/stdc++.h>
+#include<typeid>
 
-struct node{
+struct Node {
 	int data;
-	struct node* next;
+	struct Node* next; 
 };
 
-struct node* head = NULL;
-void insert(int new_data) {
-	struct node* new_node = (struct node*) malloc(sizeof(struct node));
-	new_node -> data = new_data;    
-	new_node -> next = head;
-	head = new_node;
-}
+struct Node* head = NULL;
+void insert(int n) {
 
-void display() {
-	struct node* ptr;
-	ptr = head;
-	while( ptr != NULL ) {
-		std::cout << ptr -> data << " ";
-		ptr = ptr -> next;
-	}
+	struct Node* tmp = (struct Node*) malloc(sizeof(struct Node));
+	tmp -> data = n;
+	tmp -> next = head; 
+	head = tmp;
+	std::cout << tmp -> data << std::endl;
 }
 
 int main(void) {
 
-	std::cout <<"Inserting data: ";
-	for( int x=0; x<=5; x++ ) {
-		insert(x);
-	}
-	display();
+	insert(10);
+	insert(20);
 	return 0;
 }

@@ -21,7 +21,7 @@ isFull( st *s ) {
     if(s->top == MAX - 1)
         return 1;
     else
-	return 0;
+    return 0;
 }
 
 /* check if the stack is empty */
@@ -30,7 +30,7 @@ isEmpty( st *s ) {
     if(s->top == -1)
         return 1;
     else
-	return 0;
+    return 0;
 }
 
 /* push elemnts to the stack */
@@ -38,7 +38,6 @@ void
 push( st* s, int new_item ) {
     if( isFull(s) ) {
         std::cout << "Stack is already full!" << std::endl;
-        return 0;
     }
     else {
         s->top++;
@@ -52,14 +51,14 @@ push( st* s, int new_item ) {
 void
 pop( st *s ){
     if(isEmpty(s)){
-    	std::cout << "The stack is empty!" << std::endl;
+        std::cout << "The stack is empty!" << std::endl;
     }
     else {
-	std::cout << "Item popped: ";
-	s->top--;
+    std::cout << "Item popped: ";
+    s->top--;
     }
     size--;
-    std::endl;
+    std::cout << std::endl;
 }
 
 /* Prints elements of stack */
@@ -69,7 +68,7 @@ printStack( st *s ) {
     for( int i=0; i<=size; i++ ) {
         std::cout << s->items[i] << " ";
     }
-    std::endl;
+    std::cout << std::endl;
 }
 
 //driver code
