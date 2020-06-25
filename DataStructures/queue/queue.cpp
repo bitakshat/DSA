@@ -76,7 +76,6 @@ public:
 
 int main() {
 	Queue q;
-
 	for( int x=1; x<=5; x++ ) {
 		q.enQueue(x);
 	}
