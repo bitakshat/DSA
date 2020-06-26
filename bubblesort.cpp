@@ -1,42 +1,44 @@
+
 #include<bits/stdc++.h>
 
-void bubbleSort( int array[], int size ) {
-
-	for( int step = 0; step < size -1; ++step ) {
-
-		for( int i = 0; i < size - step - 1; ++i ) {
-			if( array[i] > array[i + 1] ) {
-				int temp = array[i];
-				array[i] = array[i + 1];
-				array[i + 1] = temp;
-			}
-		}
-	}
+int bubblesort(int array[], int array_size) {
+    
+    for( int step = 0; step < array_size - 1; ++step ) { 
+        
+        for( int i=0; i<=array_size-step-1; ++i ) {
+            //swaping indexes
+            if(array[i] > array[i+1]){
+                int temp = array[i];
+                array[i] = array[i+1];
+                array[i+1] = temp;
+            }
+        }
+    }
+    
+    std::cout << "Sorted Array: ";
+    for( int x=0; x <= array_size; ++x ) {
+        std::cout << array[x] << " ";
+    }
+    
 }
 
-void printArray( int array[], int size ) {
-	for( int i = 0; i < size; ++i ) {
-		std::cout << " " << array[i];
-	}
-	std::cout << '\n';
-}
-
-//driver code
 int main( void ) {
-	int data_set1[] = {-2,45,0,11,-9};
-	int data_set2[] = {5,3,4,1,2,6,7,8,3,0};
+    srand(time(NULL));
+    int random_size = rand() % 10 + 1;
+    int sample_data[random_size] = {};
 
-	int size_set1 = sizeof( data_set1 ) / sizeof( data_set1[0] );
-	int size_set2 = sizeof( data_set2 ) / sizeof( data_set2[0] );
-	
-	bubbleSort( data_set1, size_set1 );
-    std::cout << "Sorted Array set 1: ";
-	printArray( data_set1, size_set1 );
-	
+    for( int t=0; t<=random_size; ++t ) {
+        int value = rand() % 20 + 1;
+        sample_data[t] = value;
+    }
+    int array_size = sizeof(sample_data) / sizeof(sample_data[0]);
+    //printing out randomly generated array
+    std::cout << "Unsorted array: ";
+    for(int x=0; x<=array_size; ++x ) {
+        std::cout << sample_data[x] << " ";
+    }
+    
     std::cout << std::endl;
-    bubbleSort( data_set2, size_set2 );
-	std::cout << "Sorted Array set 2: ";
-    printArray( data_set2, size_set2 );
-
-	return 0;
+    bubblesort(sample_data, array_size);
+    return 0;
 }
