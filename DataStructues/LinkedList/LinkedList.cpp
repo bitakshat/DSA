@@ -1,37 +1,65 @@
-#include<bits/stdc++.h>
-#include<cstddef>
+#include <bits/stdc++.h>
 
-class Node {
-private:
+struct Node {
 	int data;
-	int* next;
-	Node(int d) {
-		data = -1;
-		next = nullptr;
-	}
+	struct Node* next;
 };
 
-class LinkedList:private Node{
+class linked_list {
 public:
-	int *head, *tail;
-	LinkedList(): Node(){	
-		head = nullptr;
-		tail = nullptr;
+	struct Node *head, *tail;
+	//constructor
+	linked_list() {
+		head = NULL;
+		tail = NULL;
+	}
+
+	///////FUNCTIONS AND OPERATIONS/////////
+
+	void insert( int value ) {
+		struct Node* temp = (struct Node*) malloc(sizeof(struct Node));
+		temp -> data = value;
+		temp -> next = head;
+		head = temp;
+	}
+
+	void display( void ) {
+		struct Node* ptr;
+		ptr = head;
+
+		std::cout << "List: ";
+		while( ptr != NULL ) {
+			std::cout << ptr -> data << " ";
+			ptr = ptr -> next;
+		}
+	}
+
+	void delete_node( int n ) {
+		struct Node *temp, *prev;
+		temp = head;
+
+		while( temp -> next != NULL ) {
+			
+			if(temp -> data == n ) {
+				temp = temp -> next;
+				delete temp;
+				prev = temp;
+			}
+		}
 	}
 };
 
-///////////list Functions//////////
-bool insert( int value ) { 
-	
-}
-bool deleteNode() { return true;}
-int length(void) { return 0; }
-int peek(void) { return 0;}
-int pop(void) { return 0;}
-bool push( int value ) { return true; }
-void traverse(void) {}
 
-int main(void) {
-	LinkedList li(35); 			//inserting test value
+////////Driver Code///////
+int main( void ) {
+
+	linked_list li;
+	for( int x = 1; x <= 3; x++ ) {
+		li.insert(x);
+	}
+	li.display();
+	li.delete_node(2);
+	li.display();
+
 	return 0;
 }
