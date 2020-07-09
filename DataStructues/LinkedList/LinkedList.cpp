@@ -1,65 +1,58 @@
-#include <bits/stdc++.h>
+
+#include <iostream>
+#include <cstdlib>
 
 struct Node {
 	int data;
 	struct Node* next;
 };
 
-class linked_list {
+struct Node *head = NULL;
+class LinkedList {
 public:
-	struct Node *head, *tail;
-	//constructor
-	linked_list() {
-		head = NULL;
-		tail = NULL;
-	}
 
-	///////FUNCTIONS AND OPERATIONS/////////
-
+	// Utility Functions //
 	void insert( int value ) {
-		struct Node* temp = (struct Node*) malloc(sizeof(struct Node));
-		temp -> data = value;
-		temp -> next = head;
-		head = temp;
+		struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
+		new_node -> data = value;
+		new_node -> next = head;
+		head = new_node;
 	}
 
 	void display( void ) {
-		struct Node* ptr;
-		ptr = head;
+		struct Node* temp;
+		temp = head;
 
-		std::cout << "List: ";
-		while( ptr != NULL ) {
-			std::cout << ptr -> data << " ";
-			ptr = ptr -> next;
+		while( temp != NULL ) {
+			std::cout << temp -> data << " ";
+			temp = temp -> next;
 		}
 	}
 
-	void delete_node( int n ) {
+	void delteNode( int value ) {
 		struct Node *temp, *prev;
-		temp = head;
 
-		while( temp -> next != NULL ) {
-			
-			if(temp -> data == n ) {
-				temp = temp -> next;
-				delete temp;
-				prev = temp;
+		if( head -> data == value ) {
+			head = head -> next;
+			free(temp);
+		}
+
+		temp = head;
+		prev = temp;
+
+		while( temp != NULL ) {
+			if( temp -> data == value ) {
+
 			}
 		}
 	}
 };
 
+// Driver code //
+int main(void) {
+	LinkedList li;
+	li.insert(10);
 
-////////Driver Code///////
-int main( void ) {
-
-	linked_list li;
-	for( int x = 1; x <= 3; x++ ) {
-		li.insert(x);
-	}
 	li.display();
-	li.delete_node(2);
-	li.display();
-
 	return 0;
 }
