@@ -29,30 +29,42 @@ public:
 		}
 	}
 
-	void delteNode( int value ) {
+	void deleteNode( int value ) {
 		struct Node *temp, *prev;
 
-		if( head -> data == value ) {
-			head = head -> next;
-			free(temp);
-		}
-
 		temp = head;
-		prev = temp;
+		prev = head;
 
-		while( temp != NULL ) {
-			if( temp -> data == value ) {
-
+		std::cout << std::endl;
+		while( (temp != NULL) && (temp -> data != value) ) {
+			prev = temp;
+			temp = temp -> next;
+		}
+		if( prev == NULL ) {
+			std::cout << "Record not found!" << std::endl;
+		}
+		if( temp == head ) {
+			head = head -> next;
+		}
+		else {
+			prev -> next = temp -> next;
+			if( temp -> next == NULL ) {
+				temp = prev;
 			}
 		}
+		delete temp;
 	}
 };
 
 // Driver code //
 int main(void) {
 	LinkedList li;
-	li.insert(10);
-
+	
+	for( int i=1; i<=5; i++) {
+		li.insert(i);
+	}
+	li.display();
+	li.deleteNode(5);
 	li.display();
 	return 0;
 }
