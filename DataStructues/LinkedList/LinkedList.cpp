@@ -13,7 +13,7 @@ public:
 
 	// Utility Functions //
 	void insert( int value ) {
-		struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
+		struct Node* new_node = new Node();
 		new_node -> data = value;
 		new_node -> next = head;
 		head = new_node;
@@ -54,6 +54,24 @@ public:
 		}
 		delete temp;
 	}
+
+	void reverse() {
+		struct Node *curr = head;
+		struct Node *prev, *ptr;
+		prev = NULL;
+		ptr = NULL;	
+
+		while( curr != NULL ) {
+			//store next
+			ptr = curr -> next;
+			//reverse current node's pointer
+			curr -> next = prev;
+			//moves pointers one position ahead
+			prev = curr;
+			curr = ptr;
+		}
+		head = prev;
+	}
 };
 
 // Driver code //
@@ -64,7 +82,8 @@ int main(void) {
 		li.insert(i);
 	}
 	li.display();
-	li.deleteNode(5);
+	li.reverse();
+	std::cout << std::endl;
 	li.display();
 	return 0;
 }
