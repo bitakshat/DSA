@@ -1,26 +1,26 @@
 
-#include <iostream>
-#include <cstdlib>
+#include <bits/stdc++.h>
 
 struct Node {
 	int data;
-	struct Node* next;
+	Node* next;
 };
 
-struct Node *head = NULL;
+Node *head = NULL;
 class LinkedList {
 public:
 
 	// Utility Functions //
-	void insert( int value ) {
-		struct Node* new_node = new Node();
+	template<typename T>
+	T insert( T value ) {
+		Node* new_node = new Node();
 		new_node -> data = value;
 		new_node -> next = head;
 		head = new_node;
 	}
 
 	void display( void ) {
-		struct Node* temp;
+		Node* temp;
 		temp = head;
 
 		while( temp != NULL ) {
@@ -29,8 +29,8 @@ public:
 		}
 	}
 
-	void deleteNode( int value ) {
-		struct Node *temp, *prev;
+	void deleteNode( T value ) {
+		Node *temp, *prev;
 
 		temp = head;
 		prev = head;
@@ -40,12 +40,15 @@ public:
 			prev = temp;
 			temp = temp -> next;
 		}
+		//********case 1: empty list********//
 		if( prev == NULL ) {
 			std::cout << "Record not found!" << std::endl;
 		}
+		//********case 2: only one node is present********///
 		if( temp == head ) {
 			head = head -> next;
 		}
+		//********case 3: delete from a given position********//
 		else {
 			prev -> next = temp -> next;
 			if( temp -> next == NULL ) {
@@ -56,11 +59,11 @@ public:
 	}
 
 	void reverse() {
-		struct Node *curr = head;
-		struct Node *prev, *ptr;
+		Node *curr = head;
+		Node *prev, *ptr;
 		prev = NULL;
 		ptr = NULL;	
-
+		
 		while( curr != NULL ) {
 			//store next
 			ptr = curr -> next;
@@ -78,9 +81,11 @@ public:
 int main(void) {
 	LinkedList li;
 	
-	for( int i=1; i<=5; i++) {
+	for( auto i=1; i<=5; i++) {
 		li.insert(i);
 	}
+	li.display();
+	li.deleteNode(3);
 	li.display();
 	li.reverse();
 	std::cout << std::endl;
