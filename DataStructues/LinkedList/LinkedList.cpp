@@ -7,12 +7,12 @@ struct Node {
 };
 
 Node *head = NULL;
+
 class LinkedList {
 public:
 
 	// Utility Functions //
-	template<typename T>
-	T insert( T value ) {
+	void insert( int value ) {
 		Node* new_node = new Node();
 		new_node -> data = value;
 		new_node -> next = head;
@@ -29,7 +29,7 @@ public:
 		}
 	}
 
-	void deleteNode( T value ) {
+	void deleteNode( int value ) {
 		Node *temp, *prev;
 
 		temp = head;
