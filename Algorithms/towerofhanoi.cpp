@@ -1,22 +1,29 @@
+#include<iostream>
+using namespace std;
 
-
-
-#include <bits/stdc++.h>
-
-void towerOfHanoi(int n, char from_rod, char to_rod, char aux_rod) {
-	if( n == 1 ) {
-		std::cout << "Move disk 1 from rod " << from_rod << " to rod " << to_rod << std::endl;
-	}	
-
-	towerOfHanoi( n - 1, from_rod, aux_rod, to_rod );
-	std::cout << "Move Disk " << n << " from rod " << from_rod << " to rod " << to_rod << std::endl;
-
-	towerOfHanoi( n - 1, aux_rod, to_rod, from_rod);
+//tower of HANOI function implementation
+void TOH(int n,char Sour, char Aux,char Des)
+{ 
+	if(n==1)
+	{
+		cout<<"Move Disk "<<n<<" from "<<Sour<<" to "<<Des<<endl;
+		return;
+	}
+	
+	TOH(n-1,Sour,Des,Aux);
+	cout<<"Move Disk "<<n<<" from "<<Sour<<" to "<<Des<<endl;
+	TOH(n-1,Aux,Sour,Des);
 }
 
-// Driver Code
-int main( void ) {
-	int n = 4; // Number of disks
-	towerOfHanoi(n, 'A', 'C', 'B'); // A, B, C names of rod
+//main program
+int main()
+{ 
+	int n;
+	
+	cout<<"Enter no. of disks:";	
+	cin>>n;
+	//calling the TOH 
+	TOH(n,'A','B','C');
+	
 	return 0;
 }

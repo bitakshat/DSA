@@ -1,1 +1,3 @@
-## Data Structures and Algorithms I've learned so far
+## All Data Structures and Algorithms I've learned so far
+Compilation: `g++ -o [program file name] [output file name]`
+Execution: (On Windows) `.\[output file name]` (On Linux/Unix) `./[output file name]` 

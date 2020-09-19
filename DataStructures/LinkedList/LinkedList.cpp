@@ -81,7 +81,7 @@ public:
 int main(void) {
 	LinkedList li;
 	
-	for( auto i=1; i<=5; i++) {
+	for( int i=1; i<=5; i++) {
 		li.insert(i);
 	}
 	li.display();
