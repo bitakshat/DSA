@@ -1,4 +1,4 @@
- 
+
 #include <bits/stdc++.h>
 
 class Node {
@@ -14,7 +14,7 @@ class SimpleLinkedList {
 public:
 	/* store new element in list */
 	void insert(int value) {
-		Node* new_node = new Node;
+		Node* new_node = new Node();
 		new_node -> data = value;
 		new_node -> ptr = head;
 		head = new_node;
