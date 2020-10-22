@@ -1,12 +1,10 @@
-
 #include<bits/stdc++.h>
 
 int bubblesort(int array[], int array_size) {
     
-    for( int step = 0; step < array_size - 1; ++step ) { 
-        
-        for( int i=0; i<=array_size-step-1; ++i ) {
-            //swaping indexes
+    for(int step = 0; step < array_size - 1; ++step) { 
+        for(int i = 0; i <= array_size-step-1; ++i) {
+            /* swaping indexes */
             if(array[i] > array[i+1]){
                 int temp = array[i];
                 array[i] = array[i+1];
@@ -19,7 +17,7 @@ int bubblesort(int array[], int array_size) {
     for( int x=0; x <= array_size; ++x ) {
         std::cout << array[x] << " ";
     }
-    
+    -
 }
 
 int main( void ) {
@@ -32,7 +30,8 @@ int main( void ) {
         sample_data[t] = value;
     }
     int array_size = sizeof(sample_data) / sizeof(sample_data[0]);
-    //printing out randomly generated array
+    
+    /* printing out randomly generated array */
     std::cout << "Unsorted array: ";
     for(int x=0; x<=array_size; ++x ) {
         std::cout << sample_data[x] << " ";
