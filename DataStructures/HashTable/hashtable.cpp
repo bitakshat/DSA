@@ -61,6 +61,7 @@ int main() {
     for(int i = 0; i < 5; i++) 
         ht.insertElement(arr[i]);
 
+    std::cout << ".... HELLO WORLD ...." << std::endl;
     std::cout << "..:: Hash Table ::.." << std::endl;
     ht.printAll();
     ht.removeElement(4);
