@@ -17,7 +17,7 @@ int bubblesort(int array[], int array_size) {
     for( int x=0; x <= array_size; ++x ) {
         std::cout << array[x] << " ";
     }
-    -
+    
 }
 
 int main( void ) {

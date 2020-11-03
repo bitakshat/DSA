@@ -24,7 +24,7 @@ public:
     void insertElement(int key);
     void removeElement(int key);
     void printAll();
-};
+};  
 
 
 void HashTable::insertElement(int key) {
