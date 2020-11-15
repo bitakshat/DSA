@@ -1,57 +1,32 @@
 
 
 
-#include <stdlib.h>
 #include <iostream>
 
 typedef struct Node Node;
 struct Node {
 	int data;
-	Node *left, *right;
+	Node *leftChild;
+	Node *rightChild;
 };
 
-// new node creation
-Node *newNode(int data) {
-	Node* node = (Node) malloc(sizeof(Node));
-	node -> data = data;
-	node -> left = NULL;
-	node -> right = NULL;
-}
+class BinarySearchTree {
+public:
+	void insert(int data) {
+		Node temp = (Node*) malloc(sizeof(Node));
+		Node *current;
+		Node *parent;
 
-// Traverse Preorder
-void traversePreOrder(Node *temp) {
-	if(temp != NULL) {
-		std::cout << " " << temp -> data;
-		traversePreOrder(temp -> left);
-		traversePreOrder(temp -> right);
+		temp -> data = data;
+		temp -> leftChild = NULL;
+		temp -> rightChild = NULL;
+
+		/* if tree is empty, create new node */
+		if(root == NULL) {
+			root = TEMP;
+		} else {
+			current = root;
+			parent = NULL;
+		}
 	}
-}
-
-// Traverse Inorder
-void traverseInOrder(Node *temp) {
-	if(temp != NULL) {
-		traverseInOrder(temp -> left);
-		std::cout << " " << temp -> data;
-		traverseInOrder(temp -> right);
-	}
-}
-
-void traversePostOrder(Node *temp) {
-	if(temp != NULL) {
-		traversePostOrder(temp -> left);
-		traversePostOrder(temp -> right);
-		std::cout << " " << temp -> data;
-	}
-}
-
-int main() {
-	Node *root = new Node(1);
-	root -> left = new Node(2);
-	root -> right = new Node(3);
-	root -> left -> left = new Node(4);
-
-	std::cout << "Preorder traversal: ";
-	traversePreOrder(root);
-
-	return 0;
-}
+};
