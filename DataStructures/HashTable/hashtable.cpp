@@ -54,14 +54,14 @@ void HashTable::printAll() {
     }
 }
 
-// Driver Code
+
+/* Driver Code */
 int main() {
     HashTable ht(3);
     int arr[] = {2, 3, 4, 6, 10};
     for(int i = 0; i < 5; i++) 
         ht.insertElement(arr[i]);
 
-    std::cout << ".... HELLO WORLD ...." << std::endl;
     std::cout << "..:: Hash Table ::.." << std::endl;
     ht.printAll();
     ht.removeElement(4);
