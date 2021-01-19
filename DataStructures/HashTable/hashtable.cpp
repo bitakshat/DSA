@@ -68,15 +68,7 @@ int main() {
     std::cout << std::endl << "..:: After deleting element ::..";
     ht.printAll();
 
-    return 0; 
+    std::cin.ignore();
+	std::cin.get();
+    return EXIT_SUCCESS; 
 }
-
-
-
-
-
-
-
-
-
-
