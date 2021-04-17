@@ -15,7 +15,7 @@
 - Maximum no of nodes in a tree of level (l): <code>2<sup>l</sup> - 1</code>
 - Maximum no of nodes in a tree of height (h): <code>2<sup>h + 1</sup> - 1</code>
 - Level of Tree: <code>ceil(log<sub>2</sub>(n))</code>
-- Height of perfect/complete tree with n nodes: <code>log<sub>2</sub><sup>(n + 1)</sup> - 1</code>
+- Height of perfect/complete tree with n nodes: <code>log<sub>2</sub>(n + 1) - 1</code>
 - Height of Tree with n nodes: <code>floor(log<sub>2</sub>n)</code> (n = Number of Nodes)
 - Height of an <code>*empty tree: -1*</code> and <code>*tree with one node = 0*</code>
 ---
