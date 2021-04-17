@@ -10,9 +10,8 @@
 - Depth (of node): Number of edges in path from root to node x. 
 - Forest: Set of disjoint tree. (In a given tree, if you remove its root node then it becomes a forest).
 ---
-- Number of edges in a tree with **n nodes**: (n - 1)
+- Number of edges in a tree with **(n) nodes**: (n - 1)
 - Maximum no of nodes at level i = <code>2<sup>i</sup></code>
-- Maximum no of nodes in a tree of level (l): <code>2<sup>l</sup> - 1</code>
 - Maximum no of nodes in a tree of height (h): <code>2<sup>h + 1</sup> - 1</code>
 - Level of Tree: <code>ceil(log<sub>2</sub>(n))</code>
 - Height of perfect/complete tree with n nodes: <code>log<sub>2</sub>(n + 1) - 1</code>
