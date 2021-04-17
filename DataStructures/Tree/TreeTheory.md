@@ -16,7 +16,7 @@
 - Level of Tree: <code>ceil(log<sub>2</sub>(n))</code>
 - Height of perfect/complete tree with n nodes: <code>log<sub>2</sub>(n + 1) - 1</code>
 - Height of Tree with n nodes: <code>floor(log<sub>2</sub>n)</code> (n = Number of Nodes)
-- Height of an <code>*empty tree: -1*</code> and <code>*tree with one node = 0*</code>
+- Height of an <code>empty tree: -1</code> and <code>tree with one node = 0</code>
 ---
 ### For complete tree using arrays
 - for node at index i
@@ -25,8 +25,8 @@
 ---
 ## Tree Traversal
 - Depth First Traversals:
-  (a) Preorder(root, left, right)
-  (b) Inorder(left, root, right)
-  (c) Postorder(left, right, root)
+  - (a) Preorder(root, left, right)
+  - (b) Inorder(left, root, right)
+  - (c) Postorder(left, right, root)
 - Breadth First or Level-Order Traversal
   - (left, right)
