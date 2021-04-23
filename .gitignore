@@ -3,4 +3,5 @@ DataStructures/LinkedList/*.exe
 DataStructures/HashTable/*.exe
 DataStructures/queue/*.exe
 DataStructures/*.exe
-
+DataStructures/Tree/.vscode/*.*
+DataStructures/Tree/*.exe
