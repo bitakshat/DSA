@@ -1,4 +1,4 @@
-./Algorithms/**/*.exe
-./DataStructures/**/*.exe
-./DataStructures/Tree/.vscode
-./DataStructures/Tree/*.exe
+Algorithms/**/*.exe
+DataStructures/**/*.exe
+DataStructures/Tree/.vscode
+DataStructures/Tree/*.exe
